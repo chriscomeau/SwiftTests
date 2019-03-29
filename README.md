@@ -15,6 +15,6 @@ Swift Tests while learning Swift 4 and 5.
 * Chris Comeau
 * iOS Developer, Montreal, Canada
 * chris.comeau@skyriser.com
-* [http://chriscomeau.com/](//)
+* [http://chriscomeau.com/](http://chriscomeau.com/)
 
  
