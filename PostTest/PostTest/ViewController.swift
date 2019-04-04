@@ -16,35 +16,44 @@ class ViewController: UIViewController, URLSessionDelegate, URLSessionTaskDelega
   
   var tableArray = [Dictionary<String, Any>]()
   
-    override func viewDidLoad() {
+  override func viewDidLoad() {
     super.viewDidLoad()
 
-    
     postData()
   }
   
+  //reference https://gist.github.com/cmoulton/7ddc3cfabda1facb040a533f637e74b8
   func postData() {
     let todosEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
+    
     guard let todosURL = URL(string: todosEndpoint) else {
       print("Error: cannot create URL")
       return
     }
-    var todosUrlRequest = URLRequest(url: todosURL)
-    todosUrlRequest.httpMethod = "POST"
+    
+    var request = URLRequest(url: todosURL)
+    request.httpMethod = "POST" //important
     let newTodo: [String: Any] = ["title": "My First todo", "completed": false, "userId": 1]
     let jsonTodo: Data
+    
     do {
-      jsonTodo = try JSONSerialization.data(withJSONObject: newTodo, options: [])
-      todosUrlRequest.httpBody = jsonTodo
+      jsonTodo = try JSONSerialization.data(withJSONObject: newTodo, options: []) //important
+      request.httpBody = jsonTodo //important
+      
+      //https://medium.com/@sdrzn/networking-and-persistence-with-json-in-swift-4-part-2-e4f35a606141
+      // Make sure that we include headers specifying that our request's HTTP body
+      // will be JSON encoded
+//      var headers = request.allHTTPHeaderFields ?? [:]
+//      headers["Content-Type"] = "application/json"
+//      request.allHTTPHeaderFields = headers
+      
     } catch {
       print("Error: cannot create JSON from todo")
       return
     }
     
-    let session = URLSession.shared
-    
-    let task = session.dataTask(with: todosUrlRequest) {
-      (data, response, error) in
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+      
       guard error == nil else {
         print("error calling POST on /todos/1")
         print(error!)
@@ -57,10 +66,11 @@ class ViewController: UIViewController, URLSessionDelegate, URLSessionTaskDelega
       
       // parse the result as JSON, since that's what the API provides
       do {
-        guard let receivedTodo = try JSONSerialization.jsonObject(with: responseData,
-                                                                  options: []) as? [String: Any] else {
-                                                                    print("Could not get JSON from responseData as dictionary")
-                                                                    return
+        guard let receivedTodo = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]
+          else {
+                print("Could not get JSON from responseData as dictionary")
+                return
+            
         }
         print("The todo is: " + receivedTodo.description)
         
@@ -68,6 +78,7 @@ class ViewController: UIViewController, URLSessionDelegate, URLSessionTaskDelega
           print("Could not get todoID as int from JSON")
           return
         }
+        
         print("The ID is: \(todoID)")
       } catch  {
         print("error parsing response from POST on /todos")
