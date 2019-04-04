@@ -88,7 +88,7 @@ class ViewController: UIViewController, URLSessionDelegate, URLSessionTaskDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "cell"
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
+      let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: identifier)
         
         if let label = cell.textLabel {
             label.text = self.tableArray[indexPath.row]
