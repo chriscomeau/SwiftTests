@@ -13,6 +13,7 @@
 		830766B121050AC8005541C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 830766B021050AC8005541C4 /* Assets.xcassets */; };
 		830766B421050AC8005541C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830766B221050AC8005541C4 /* LaunchScreen.storyboard */; };
 		830766BF21050AC8005541C4 /* NSURLSessionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830766BE21050AC8005541C4 /* NSURLSessionTestTests.swift */; };
+		83A6DE9B2264CA960049D7FA /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A6DE9A2264CA950049D7FA /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		830766BA21050AC8005541C4 /* NSURLSessionTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSURLSessionTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		830766BE21050AC8005541C4 /* NSURLSessionTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURLSessionTestTests.swift; sourceTree = "<group>"; };
 		830766C021050AC8005541C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83A6DE9A2264CA950049D7FA /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				830766A921050AC7005541C4 /* AppDelegate.swift */,
 				830766AB21050AC7005541C4 /* ViewController.swift */,
+				83A6DE9A2264CA950049D7FA /* ViewController2.swift */,
 				830766AD21050AC7005541C4 /* Main.storyboard */,
 				830766B021050AC8005541C4 /* Assets.xcassets */,
 				830766B221050AC8005541C4 /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 			files = (
 				830766AC21050AC7005541C4 /* ViewController.swift in Sources */,
 				830766AA21050AC7005541C4 /* AppDelegate.swift in Sources */,
+				83A6DE9B2264CA960049D7FA /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
