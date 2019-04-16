@@ -35,6 +35,8 @@ test
 			let index = string3.index(of: "e")
 			
 
+      let string4 = "lowercase"
+      let string5 = string4.uppercased()
 			
     }
 
