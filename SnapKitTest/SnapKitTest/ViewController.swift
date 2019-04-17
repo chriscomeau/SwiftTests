@@ -23,6 +23,20 @@ class ViewController: UIViewController {
       make.width.height.equalTo(50)
       make.center.equalTo(self.view)
     }
+    
+    
+    let button = UIButton()
+    button.layer.cornerRadius = 33
+    button.setTitle("+", for: .normal)
+    button.backgroundColor = UIColor.black
+    self.view.addSubview(button)
+    button.snp_makeConstraints { (make) -> Void in
+      make.width.equalTo(66)
+      make.height.equalTo(66)
+      make.bottom.equalTo(self.view.snp_bottom).offset(-20)
+      make.right.equalTo(self.view.snp_right).offset(-20)
+    }
+
 
   }
 
